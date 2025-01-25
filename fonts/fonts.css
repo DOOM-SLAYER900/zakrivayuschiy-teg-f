@@ -11,6 +11,6 @@
   src:
     url(./Inter-Variable.woff2) format('woff2 supports variation'),
     url(./Inter-Variable.woff2) format('woff2-variations');
-  font-variation-settings: "wght" 100 900, "slnt" -10 0;
+  font-variation-settings: "wght" 400 785, "slnt" -10 0;
   font-display: swap;
 }
