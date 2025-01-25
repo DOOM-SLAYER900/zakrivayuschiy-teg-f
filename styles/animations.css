@@ -9,3 +9,104 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes like-heart {
+  0% {
+    fill: var(--contour-color);
+  }
+  100% {
+    fill: var(--heart-color);
+  }
+}
+
+@keyframes like-heart-scale {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(1.25);
+    transform-origin: center;
+  }
+}
+
+@keyframes like-heart-sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.core {
+  transition: fill 0.3s 0.03s linear;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: opacity(0) 0.1s linear;
+}
+
+.card__icon-button {
+  outline: transparent 2px solid;
+}
+
+.card__icon-button:focus-visible { /* такой фокус стоит так как мне кажется что с сенсорным вводом ее присутствие бессмысленно */
+  outline: var(--border-color) 2px solid;
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-in;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s ease-in;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s ease-in;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s 0.05s ease-in;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-color);
+  animation: like-heart 0.3s ease-in;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-color);
+  animation: like-heart 0.3s 0.05s ease-in;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-color);
+  animation: like-heart 0.3s 0.06s ease-in;
+}
+
+.like-icon.is-liked .heart {
+  animation: like-heart-scale 0.3s 0.1s ease-in 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: like-heart-sparks 0.3s 0.3s ease-in 1;
+}
+
+.like-icon.is-liked + .card__like-button .button_text {
+  animation: like-heart-sparks 0.3s 0.3s ease-in 1;
+}
