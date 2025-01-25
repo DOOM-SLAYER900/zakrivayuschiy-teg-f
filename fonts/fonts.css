@@ -9,8 +9,9 @@
 @font-face {
   font-family: 'Inter-Variable';
   src:
-    url(./Inter-Variable.woff2) format('woff2 supports variation'),
+    url(./Inter-Variable.woff2) format('woff2 supports variations'),
     url(./Inter-Variable.woff2) format('woff2-variations');
-  font-variation-settings: "wght" 400 785, "slnt" -10 0;
+  font-weight: 400 785;
+  font-variation-settings: "slnt" -10 0;
   font-display: swap;
 }
