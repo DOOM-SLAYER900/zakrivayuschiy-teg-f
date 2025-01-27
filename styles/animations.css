@@ -10,7 +10,7 @@
 
 */
 
-@keyframes like-heart {
+@keyframes PaintInRed {
   0% {
     fill: var(--contour-color);
   }
@@ -19,7 +19,7 @@
   }
 }
 
-@keyframes like-heart-scale {
+@keyframes EnlargeObject {
   0% {
     transform: scale(1);
     transform-origin: center;
@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes like-heart-sparks {
+@keyframes RemoveOpacity {
   0% {
     opacity: 0;
   }
@@ -52,7 +52,8 @@
 }
 
 .contour {
-  transition: opacity(0) 0.1s linear;
+  opacity: 1;
+  transition: opacity 0.1s linear;
 }
 
 .card__icon-button {
@@ -66,47 +67,43 @@
 
 .card__icon-button:hover .core {
   fill: var(--contour-color);
-  transition: fill 0.3s ease-in;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  transition: fill 0.3s 0.05s ease-in;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .core {
   fill: var(--heart-color);
-  transition: fill 0.3s ease-in;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--heart-color);
-  transition: fill 0.3s 0.05s ease-in;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-color);
-  animation: like-heart 0.3s ease-in;
+  animation: PaintInRed 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-color);
-  animation: like-heart 0.3s 0.05s ease-in;
+  animation: PaintInRed 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-color);
-  animation: like-heart 0.3s 0.06s ease-in;
+  animation: PaintInRed 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked .heart {
-  animation: like-heart-scale 0.3s 0.1s ease-in 1;
+  animation: EnlargeObject 0.3s 0.1s ease-in 1;
 }
 
 .like-icon.is-liked .sparks {
-  animation: like-heart-sparks 0.3s 0.3s ease-in 1;
-}
-
-.like-icon.is-liked + .card__like-button .button_text {
-  animation: like-heart-sparks 0.3s 0.3s ease-in 1;
+  animation: RemoveOpacity 0.3s 0.3s ease-in 1;
 }
